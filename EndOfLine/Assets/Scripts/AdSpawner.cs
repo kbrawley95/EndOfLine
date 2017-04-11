@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AdSpawner : MonoBehaviour {
 
+[SerializeField]
+string sceneName;
 [SerializeField]
 GameObject adPrefab;
 
@@ -14,7 +17,7 @@ GameObject poolObj;
 List<GameObject> ad_pool;
 
 [SerializeField]
-Vector3[] adPositions;
+Vector2[] adPositions;
 
 [SerializeField]	
 Text clock;
@@ -32,17 +35,18 @@ float timer;
 		clock.text = FormatedTime(timer);	
 
 		if(timer <0)
+		{
 			timer = 0;
+			TransitionToNewScene.LoadScene(sceneName);
+		}
 	}
 
 	void SetupAds()
 	{
-		const int LIMIT = 6;
-		for(int i =0; i<LIMIT; i++)
+		for(int i =0; i<adPositions.Length; i++)
 		{
-			GameObject temp = GameObject.Instantiate(adPrefab, adPositions[i], Quaternion.identity);
-			temp.transform.parent = poolObj.transform;
-			temp.GetComponent<RectTransform>().SetPositionAndRotation(adPositions[i], Quaternion.identity);
+			GameObject temp = GameObject.Instantiate(adPrefab, adPositions[i], Quaternion.identity, poolObj.transform);
+			temp.GetComponent<RectTransform>().anchoredPosition=adPositions[i];
 			ad_pool.Add(temp);
 		}
 	}

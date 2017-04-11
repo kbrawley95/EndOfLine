@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class TransitionToNewScene : MonoBehaviour 
 {
 	[SerializeField]
-	private string sceneName;
-	public void LoadScene()
+	private static string sceneName;
+	public static void LoadScene(string sceneName)
 	{
 		SceneManager.LoadScene(sceneName);
 	}
+
 
 }

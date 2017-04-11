@@ -88,7 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AdSpawner.cs" />
-    <Compile Include="Assets\Scripts\Destroy.cs" />
+    <Compile Include="Assets\Scripts\DestroyObject.cs" />
     <Compile Include="Assets\Scripts\OpenTerminal.cs" />
     <Compile Include="Assets\Scripts\PixelPerfectCamera.cs" />
     <Compile Include="Assets\Scripts\Player\InputManager.cs" />

@@ -5,11 +5,19 @@ using UnityEngine;
 public class SceneRandomiser : MonoBehaviour {
 
 	[SerializeField]
-	static List<string> openScenes;
+	List<string> scenes;
 	[SerializeField]
-	static List<string> closedScenes;
+	static List<string> openScenes = new List<string>();
+	[SerializeField]
+	static List<string> closedScenes = new List<string>();
 
-	// Use this for initialization
+	void Start()
+	{
+		foreach(string s in scenes)
+		{
+			openScenes.Add(s);
+		}
+	}
 	public static string SelectNextScene()
 	{	
 		string temp = "";

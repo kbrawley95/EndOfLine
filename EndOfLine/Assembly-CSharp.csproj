@@ -49,10 +49,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AdSpawner.cs" />
+     <Compile Include="Assets\Scripts\DestroyObject.cs" />
+     <Compile Include="Assets\Scripts\OpenTerminal.cs" />
      <Compile Include="Assets\Scripts\PixelPerfectCamera.cs" />
      <Compile Include="Assets\Scripts\Player\InputManager.cs" />
      <Compile Include="Assets\Scripts\TiledBackground.cs" />
-     <Compile Include="Assets\Scripts\transitionToNewScene.cs" />
+     <Compile Include="Assets\Scripts\TransitionToNewScene.cs" />
+     <Compile Include="Assets\Scripts\WindowManagement.cs" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">

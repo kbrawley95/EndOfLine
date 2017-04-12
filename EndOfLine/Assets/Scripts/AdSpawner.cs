@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AdSpawner : MonoBehaviour {
 
@@ -24,10 +23,12 @@ Text clock;
 
 [SerializeField]	
 float timer;
+Scene currentScene;
 
 	void Start()
 	{
 		SetupAds();
+		currentScene = SceneManager.GetActiveScene();
 	}
 	void Update () 
 	{
@@ -37,7 +38,8 @@ float timer;
 		if(timer <0)
 		{
 			timer = 0;
-			TransitionToNewScene.LoadScene(sceneName);
+			SceneRandomiser.AddSceneToClosedList(currentScene.name);
+			TransitionToNewScene.LoadScene(SceneRandomiser.SelectNextScene());
 		}
 	}
 

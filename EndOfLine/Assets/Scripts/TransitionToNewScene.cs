@@ -11,6 +11,4 @@ public class TransitionToNewScene : MonoBehaviour
 	{
 		SceneManager.LoadScene(sceneName);
 	}
-
-
 }

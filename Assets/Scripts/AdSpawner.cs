@@ -1,15 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-
 public class AdSpawner : MonoBehaviour {
 
 [SerializeField]
 int killCount;
 [SerializeField]
-string sceneName;
-[SerializeField]
+
 GameObject adPrefab;
 
 [SerializeField]
@@ -20,31 +16,16 @@ List<GameObject> ad_pool;
 [SerializeField]
 Vector2[] adPositions;
 
-[SerializeField]	
-Text clock;
-
-[SerializeField]	
-float timer;
-Scene currentScene;
 
 	void Start()
 	{
 		killCount = 0;
 		SetupAds();
-		currentScene = SceneManager.GetActiveScene();
+		
 	}
 	void Update () 
 	{
-		timer -=Time.deltaTime;
-		clock.text = FormatedTime(timer);	
-
-		//If timer equals 0, triggers scene transition
-		if(timer <0)
-		{
-			timer = 0;
-			SceneRandomiser.AddSceneToClosedList(currentScene.name);
-			TransitionToNewScene.LoadScene(SceneRandomiser.SelectNextScene());
-		}
+		
 
 		//Checks Whether a pop-up object has been closed by player, relocates it and enables it once more
 		RespawnAds();
@@ -73,10 +54,5 @@ Scene currentScene;
 		}
 	}
 
-	string FormatedTime(float value)
-	{
-		string formated_time ="";
-		float tenth_seconds = value % 1000;
-		return formated_time = string.Format("Time: {0}", (int)tenth_seconds);
-	}
+	
 }

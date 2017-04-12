@@ -4,11 +4,13 @@ public class StartGame : MonoBehaviour {
 
 	[SerializeField]
 	GameObject audioManager;
-	// Use this for initialization
-	public void Init()
+
+	void Update()
 	{
-		audioManager.SetActive(true);
-		TransitionToNewScene.LoadScene(SceneRandomiser.SelectNextScene());
+		if(CountdownTimer.clock.text == "Time: 0")
+		{
+			Screen.orientation = ScreenOrientation.LandscapeRight;
+			audioManager.SetActive(true);
+		}
 	}
-	
 }

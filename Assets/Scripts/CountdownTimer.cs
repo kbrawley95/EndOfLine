@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 public class CountdownTimer : MonoBehaviour {
 
 	[SerializeField]
+	GameObject audioManager;
+
+	[SerializeField]
 	float timerValue;
 
 	[SerializeField]
@@ -33,6 +36,8 @@ public class CountdownTimer : MonoBehaviour {
 			CountdownTimer.timer = 0;
 			SceneRandomiser.AddSceneToClosedList(currentScene.name);
 			TransitionToNewScene.LoadScene(SceneRandomiser.SelectNextScene());
+			Screen.orientation = ScreenOrientation.LandscapeRight;
+			audioManager.SetActive(true);
 		}
 
 	}

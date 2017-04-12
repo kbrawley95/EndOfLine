@@ -2,10 +2,10 @@
 using UnityEngine;
 public class AdSpawner : MonoBehaviour {
 
+
 [SerializeField]
 int killCount;
 [SerializeField]
-
 GameObject adPrefab;
 
 [SerializeField]
@@ -21,12 +21,9 @@ Vector2[] adPositions;
 	{
 		killCount = 0;
 		SetupAds();
-		
 	}
 	void Update () 
 	{
-		
-
 		//Checks Whether a pop-up object has been closed by player, relocates it and enables it once more
 		RespawnAds();
 	}

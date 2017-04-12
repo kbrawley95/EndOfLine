@@ -15,7 +15,8 @@ public class Test : MonoBehaviour
 				if (Physics.Raycast(ray, out hit))
 				{
 					//Destroy the first game object hit by ray
-					Destroy(hit.collider.gameObject);
+					if(hit.collider.gameObject.tag=="Terminal")
+						hit.collider.gameObject.SetActive(false);
 				}
 			}
 		}

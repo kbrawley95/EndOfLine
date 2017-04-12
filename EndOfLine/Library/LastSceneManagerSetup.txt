@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/Mini-Games/Anti-Virus.unity
-  isLoaded: 1
-  isActive: 1

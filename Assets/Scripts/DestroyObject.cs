@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,7 +15,7 @@ public class DestroyObject : MonoBehaviour
 	void Update () 
 	{
 		for (var i = 0; i < Input.touchCount; ++i)
-        {   
+        {
             if (Input.GetTouch(i).phase.Equals(TouchPhase.Began))
             {
                 // Construct a ray from the current touch coordinates

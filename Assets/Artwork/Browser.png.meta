@@ -1,16 +1,14 @@
 fileFormatVersion: 2
-guid: 2f7491dc249a91f43b11b8b74d569e69
-timeCreated: 1492026282
+guid: 615f75ba24b58b5438f6007e4537c178
+timeCreated: 1491753678
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Untitled-1_0
-    21300002: Untitled-1_1
-    21300004: Untitled-1_2
+    21300000: cmdscreen_0
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -27,11 +25,11 @@ TextureImporter:
   generateCubemap: 6
   cubemapConvolution: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -42,7 +40,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 50, y: 146, z: 84, w: 125}
   spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -64,11 +62,11 @@ TextureImporter:
   - buildTarget: Standalone
     maxTextureSize: 2048
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
   - buildTarget: Android
     maxTextureSize: 2048
     textureFormat: -1
@@ -89,41 +87,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled-1_0
+      name: cmdscreen_0
       rect:
         serializedVersion: 2
-        x: 231
-        y: 1018
-        width: 596
-        height: 533
+        x: 50
+        y: 145
+        width: 367
+        height: 230
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Untitled-1_1
-      rect:
-        serializedVersion: 2
-        x: 259
-        y: 502
-        width: 519
-        height: 186
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Untitled-1_2
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 274
-        width: 649
-        height: 161
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

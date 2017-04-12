@@ -18,13 +18,13 @@ public class SceneRandomiser : MonoBehaviour {
 			openScenes.Add(s);
 		}
 	}
-	public static string SelectNextScene()
-	{	
-		string temp = "";
-		int randomiser = Random.Range(0, openScenes.Count - 1);
-		temp = openScenes[randomiser];
-		return temp;
-	}
+		public static string SelectNextScene()
+		{	
+			string temp = "";
+			int randomiser = Random.Range(0, openScenes.Count - 1);
+			temp = openScenes[randomiser];
+			return temp;
+		}
 
 	public static void AddSceneToClosedList(string scene)
 	{
@@ -36,5 +36,10 @@ public class SceneRandomiser : MonoBehaviour {
 	{
 		openScenes.Add(scene);
 		closedScenes.Remove(scene);
+	}
+
+	public static string GetOpenScene(int index)
+	{
+		return openScenes[index];
 	}
 }

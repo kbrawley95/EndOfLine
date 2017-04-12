@@ -17,7 +17,7 @@ public class TouchManager
             //TODO Can add more mouse stuff here if you like
             return mouse;
         #else
-            return Input.GetTouch(i);
+            return Input.GetTouch(id);
         #endif
     }
 

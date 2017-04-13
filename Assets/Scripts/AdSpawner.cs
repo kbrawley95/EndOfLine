@@ -5,6 +5,7 @@ public class AdSpawner : MonoBehaviour {
 
 [SerializeField]
 int killCount;
+public static int currentKills;
 [SerializeField]
 GameObject[] adPrefabs;
 
@@ -26,7 +27,14 @@ Vector2[] adPositions;
 	void Update () 
 	{
 		//Checks Whether a pop-up object has been closed by player, relocates it and enables it once more
+		killCount = currentKills;
 		RespawnAds();
+
+		if(killCount == 20)
+		{
+
+			TransitionToNewScene.LoadScene(SceneRandomiser.SelectNextScene());
+		}
 	}
 
 	void SetupAds()

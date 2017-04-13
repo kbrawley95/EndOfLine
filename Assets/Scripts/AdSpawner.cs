@@ -6,7 +6,7 @@ public class AdSpawner : MonoBehaviour {
 [SerializeField]
 int killCount;
 [SerializeField]
-GameObject adPrefab;
+GameObject[] adPrefabs;
 
 [SerializeField]
 GameObject poolObj;
@@ -21,6 +21,7 @@ Vector2[] adPositions;
 	{
 		killCount = 0;
 		SetupAds();
+		
 	}
 	void Update () 
 	{
@@ -32,7 +33,8 @@ Vector2[] adPositions;
 	{
 		for(int i =0; i<adPositions.Length; i++)
 		{
-			GameObject temp = GameObject.Instantiate(adPrefab, adPositions[i], Quaternion.identity, poolObj.transform);
+			int randomNum = Random.Range(0, adPrefabs.Length - 1);
+			GameObject temp = GameObject.Instantiate(adPrefabs[randomNum], adPositions[i], Quaternion.identity, poolObj.transform);
 			temp.GetComponent<RectTransform>().anchoredPosition=adPositions[i];
 			ad_pool.Add(temp);
 		}

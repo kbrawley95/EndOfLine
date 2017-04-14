@@ -11,4 +11,9 @@ public class TransitionToNewScene : MonoBehaviour
 	{
 		SceneManager.LoadScene(sceneName);
 	}
+
+	public void ManuallyLoadScene(string sceneName)
+	{
+		SceneManager.LoadScene(sceneName);
+	}
 }

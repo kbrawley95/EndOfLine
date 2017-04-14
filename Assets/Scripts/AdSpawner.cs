@@ -5,6 +5,8 @@ public class AdSpawner : MonoBehaviour {
 
 [SerializeField]
 int killCount;
+
+public static int killLimit = 20;
 public static int currentKills;
 [SerializeField]
 GameObject[] adPrefabs;
@@ -30,7 +32,7 @@ Vector2[] adPositions;
 		killCount = currentKills;
 		RespawnAds();
 
-		if(killCount == 20)
+		if(killCount == killLimit)
 		{
 
 			TransitionToNewScene.LoadScene(SceneRandomiser.SelectNextScene());

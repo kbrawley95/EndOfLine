@@ -3,6 +3,10 @@ using UnityEngine.UI;
 
 public class CloseTerminal : MonoBehaviour
 {
+	[SerializeField]
+	GameObject scoreText;
+	public static Vector3 hitPoint;
+	
 	//Update is called once per frame
 	void Update ()
 	{
@@ -18,6 +22,8 @@ public class CloseTerminal : MonoBehaviour
 					//Destroy the first game object hit by ray
 					if(hit.collider.gameObject.tag=="Terminal")	
 					{
+						hitPoint = hit.point;
+						scoreText.SetActive(true);
 						Scoreboard.currentScore +=5;
 						AdSpawner.currentKills++;
 						hit.collider.gameObject.SetActive(false);

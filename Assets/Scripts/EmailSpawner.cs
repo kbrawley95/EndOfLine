@@ -20,17 +20,21 @@ public class EmailSpawner : MonoBehaviour {
 	string[] emailContents;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	 {
 		Setup();
 		emailInstances = new List<GameObject>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
+		//Test: If space key is pressed,change email queue positions
 		if(Input.GetKey(KeyCode.Space))
 			MoveForward();
 	}
 	
+	/*Method that handles the initialisation of scene objects, and adds new email instances to designated list*/
 	void Setup()
 	{
 		for(int i = 0; i<emails.Length; i++)
@@ -41,6 +45,7 @@ public class EmailSpawner : MonoBehaviour {
 		}
 	}
 
+	/*Method that alters the position of emails in the queue if they are swiped out of screen */
 	void MoveForward()
 	{
 		for(int i = 0; i<emailInstances.Count; i++)

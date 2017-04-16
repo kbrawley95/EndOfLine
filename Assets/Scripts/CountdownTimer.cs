@@ -34,6 +34,7 @@ public class CountdownTimer : MonoBehaviour {
 		if(CountdownTimer.timer <0)
 		{
 			CountdownTimer.timer = 0;
+			Scoreboard.currentTries++;
 			SceneRandomiser.AddSceneToClosedList(currentScene.name);
 			TransitionToNewScene.LoadScene(SceneRandomiser.SelectNextScene());
 			Screen.orientation = ScreenOrientation.LandscapeRight;

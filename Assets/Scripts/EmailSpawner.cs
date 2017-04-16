@@ -55,4 +55,10 @@ public class EmailSpawner : MonoBehaviour {
 				i = -1;
 		}
 	}
+
+	/*Method that handles the manipulation of email entries based on touch input */
+	void Swipe()
+	{
+		
+	}
 }

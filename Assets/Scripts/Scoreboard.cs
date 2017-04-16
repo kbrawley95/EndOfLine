@@ -9,7 +9,14 @@ public class Scoreboard : MonoBehaviour {
 
 	[SerializeField]
 	int tempScore;
-	public static int currentScore;
+
+	[SerializeField]
+	int tries = 0;
+	public static int currentScore =0;
+
+	public static int currentTries = 0;
+
+	[SerializeField]
 
 
 	void Awake()
@@ -28,7 +35,14 @@ public class Scoreboard : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 		tempScore = currentScore;
+
+		if(currentScore == 500 || currentTries ==3)
+		{
+			TransitionToNewScene.LoadScene("Final Score");
+		}	
+		
 	}
 }

@@ -23,7 +23,7 @@ public class MazeTilt : MonoBehaviour {
 	
 		direction.x = Input.acceleration.x;
 
-		direction.x = Input.GetAxis("Horizontal");
+		// direction.x = Input.GetAxis("Horizontal");
 		//direction.y -= Input.acceleration.y;
 
 		//Clamp acceleration vector to the unity sphere

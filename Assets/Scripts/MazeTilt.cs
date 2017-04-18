@@ -13,24 +13,22 @@ public class MazeTilt : MonoBehaviour {
 	[SerializeField]
 	float speed;
 	
-	// Update is called once per frame
 
 	void Start()
 	{
+		//Set player start position (vector3)
 		player.transform.position = startingPoint.transform.position;
 	}
 	void Update () {
-	
+		
+		//Player direction on x-axis dependent on horizontal tilt of mobile (landscape)
 		direction.x = Input.acceleration.x;
 
-		// direction.x = Input.GetAxis("Horizontal");
-		//direction.y -= Input.acceleration.y;
-
-		//Clamp acceleration vector to the unity sphere
+		//Clamp acceleration vector 
 		if(direction.sqrMagnitude > 1)
 			direction.Normalize();
 
-		//Make it move 10 meters per second instead of 10 meters per frame
+		//Smooth interpolation of motion
 		direction *=Time.deltaTime;
 
 		//Move object

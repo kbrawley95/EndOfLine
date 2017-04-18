@@ -7,13 +7,11 @@ public class HUDUpdate : MonoBehaviour {
 
 [SerializeField]
 Text score;
-	// Use this for initialization
-	void Start () {
-		
-	}
 	
 	// Update is called once per frame
-	void Update () {
-		score.text = string.Format("Target Threshold:{0}", AdSpawner.killLimit - AdSpawner.currentKills);
+	void Update () 
+	{
+		//Remaining number of enemies player has to destroy updated in real-time & displayed in UI
+		score.text = string.Format("Target Threshold: {0}", AdSpawner.killLimit - AdSpawner.currentKills);
 	}
 }

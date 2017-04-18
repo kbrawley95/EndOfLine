@@ -11,13 +11,12 @@ Text score;
 Text remainingLives;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
+		//Final score & lives used equal to values held in scoreboard class during session
 		score.text = " " + Scoreboard.currentScore;
-		remainingLives.text = " " + Scoreboard.currentTries;
+		remainingLives.text = " " + (3 - Scoreboard.currentTries);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	
 }

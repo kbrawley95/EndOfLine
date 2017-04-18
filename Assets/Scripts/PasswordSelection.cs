@@ -1,13 +1,15 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class CloseTerminal : MonoBehaviour
-{
+public class PasswordSelection : MonoBehaviour {
+
 	[SerializeField]
-	GameObject scoreText = null;
-	public static Vector3 hitPoint;
-	
-	//Update is called once per frame
+	GameObject passwordText;
+	[SerializeField]
+	Vector3 currentPosition;
+	public static Vector3 hitPosition;
+
 	void Update ()
 	{
 		for (int i = 0; i < TouchManager.TouchCount(); ++i)
@@ -20,13 +22,14 @@ public class CloseTerminal : MonoBehaviour
 				if (Physics.Raycast(ray, out hit))
 				{
 					//Destroy the first game object hit by ray
-					if(hit.collider.gameObject.tag=="Terminal")	
+					if(hit.collider.gameObject.tag=="Password")	
 					{
-						hitPoint = hit.point;
-						scoreText.SetActive(true);
+						hitPosition = hit.point;
+						currentPosition = hitPosition;
+						passwordText.SetActive(true);
 						Scoreboard.currentScore +=5;
-						AdSpawner.currentKills++;
 						hit.collider.gameObject.SetActive(false);
+						TransitionToNewScene.LoadScene("Secure The Server");
 					}
 				}
 			}

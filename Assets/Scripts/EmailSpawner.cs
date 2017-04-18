@@ -51,12 +51,12 @@ public class EmailSpawner : MonoBehaviour {
 	/*Method that handles the initialisation of scene objects, and adds new email instances to designated list*/
 	void Setup()
 	{
-		for(int i = 0; i<emailBools.Length; i++)
+		for(int i = 0; i<emails.Length; i++)
 		{
 			GameObject email = GameObject.Instantiate(emails[i], queuePositions[i].transform.position, Quaternion.identity, parent.transform);
 			email.transform.GetChild(0).GetComponent<Text>().text = emailContents[i];
 			email.GetComponent<Answer>().SetAnswer(emailBools[i]);
-			email.GetComponent<Answer>().SetIndexPosition(i);
+			// email.GetComponent<Answer>().SetIndexPosition(i);
 			emailInstances.Add(email);
 			emailCount++;
 		}

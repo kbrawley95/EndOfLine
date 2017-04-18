@@ -9,6 +9,9 @@ public class ShowOnce : MonoBehaviour {
 	bool firstTime = true;
 
 	[SerializeField]
+	bool blink = false;
+
+	[SerializeField]
 	float speed = 2.0f;
 	Color initialColor;
 	Color finalColor;
@@ -50,4 +53,5 @@ public class ShowOnce : MonoBehaviour {
 			yield return null;
 		}
 	}
+
 }

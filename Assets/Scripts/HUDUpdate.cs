@@ -12,6 +12,6 @@ Text score;
 	void Update () 
 	{
 		//Remaining number of enemies player has to destroy updated in real-time & displayed in UI
-		score.text = string.Format("Target Threshold: {0}", AdSpawner.killLimit - AdSpawner.currentKills);
+		score.text = string.Format("Remaining Targets: {0}", AdSpawner.killLimit - AdSpawner.currentKills);
 	}
 }

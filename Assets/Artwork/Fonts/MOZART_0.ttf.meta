@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6cae31c03ecaedc42876b6673fd65964
+timeCreated: 1492535277
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Mozart NBP
+  fontNames:
+  - Mozart NBP
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

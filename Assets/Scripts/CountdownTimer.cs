@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class CountdownTimer : MonoBehaviour {
 
 	[SerializeField]
-	GameObject audioManager;
+	GameObject audioManager = null;
 
 	[SerializeField]
 	float timerValue;

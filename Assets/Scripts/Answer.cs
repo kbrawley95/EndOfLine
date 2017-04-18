@@ -20,6 +20,10 @@ public class Answer : MonoBehaviour {
 		indexPosition = value;
 	}
 
+	public bool GetAnswer()
+	{
+		return isReal;
+	}
 	public  int GetIndexPosition()
 	{
 		return indexPosition;

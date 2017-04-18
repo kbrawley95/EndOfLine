@@ -39,7 +39,7 @@ public class Scoreboard : MonoBehaviour {
 	{
 		tempScore = currentScore;
 
-		if(currentScore == 500 || currentTries ==3)
+		if(currentTries == 3)
 		{
 			TransitionToNewScene.LoadScene("Final Score");
 		}	

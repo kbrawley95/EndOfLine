@@ -11,20 +11,36 @@ public class AnswerSelection : MonoBehaviour {
 		{
 			if(gameObject.name == "Real")
 			{
-				Debug.Log("Real");
-				Destroy(other.gameObject);
+				if(other.gameObject.GetComponent<Answer>().GetAnswer() == true)
+				{
+					Debug.Log("Real");
+					Scoreboard.currentScore +=5;
+					
+				}
+				else
+				{
+					Debug.Log("False Positive");
+					Scoreboard.currentScore -=10;
+				}
+				
 			}
 			else if(gameObject.name == "Fake")
 			{
-				Debug.Log("Fake");
-				Destroy(other.gameObject);
+				if(other.gameObject.GetComponent<Answer>().GetAnswer() == false)
+				{
+					Debug.Log("Fake");
+					Scoreboard.currentScore +=5;
+				}
+				else
+				{
+					Debug.Log("False Positive");
+					Scoreboard.currentScore -=10;
+				}
 			}
+
+			Destroy(other.gameObject);
+			EmailSpawner.emailCount --;
 		}
 	}
 
-	// void GenerateNextIP(Collider2D other)
-	// {
-	// 	for
-	// 	other.gameObject.transform.position = EmailSpawner.staticPositions.[].transform.position;
-	// }
 }

@@ -22,6 +22,7 @@ public class EmailSpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	 {
+		 Screen.orientation = ScreenOrientation.LandscapeRight;
 		Setup();
 		emailInstances = new List<GameObject>();
 	}

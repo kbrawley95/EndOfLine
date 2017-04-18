@@ -21,4 +21,10 @@ public class AnswerSelection : MonoBehaviour {
 			}
 		}
 	}
+
+	// void GenerateNextIP(Collider2D other)
+	// {
+	// 	for
+	// 	other.gameObject.transform.position = EmailSpawner.staticPositions.[].transform.position;
+	// }
 }

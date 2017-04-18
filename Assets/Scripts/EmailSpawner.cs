@@ -14,10 +14,16 @@ public class EmailSpawner : MonoBehaviour {
 	GameObject[] queuePositions;
 
 	[SerializeField]
+	public static GameObject[] staticPositions;
+
+	[SerializeField]
 	GameObject parent;
 
 	[SerializeField]
 	string[] emailContents;
+
+	[SerializeField]
+	bool[] emailBools;
 
 	// Use this for initialization
 	void Start ()
@@ -25,6 +31,7 @@ public class EmailSpawner : MonoBehaviour {
 		 Screen.orientation = ScreenOrientation.LandscapeRight;
 		Setup();
 		emailInstances = new List<GameObject>();
+		staticPositions = queuePositions;
 	}
 	
 	// Update is called once per frame
@@ -42,6 +49,8 @@ public class EmailSpawner : MonoBehaviour {
 		{
 			GameObject email = GameObject.Instantiate(emails[i], queuePositions[i].transform.position, Quaternion.identity, parent.transform);
 			email.transform.GetChild(0).GetComponent<Text>().text = emailContents[i];
+			email.GetComponent<Answer>().SetAnswer(emailBools[i]);
+			email.GetComponent<Answer>().SetIndexPosition(i);
 			emailInstances.Add(email);
 		}
 	}
@@ -57,9 +66,4 @@ public class EmailSpawner : MonoBehaviour {
 		}
 	}
 
-	/*Method that handles the manipulation of email entries based on touch input */
-	void Swipe()
-	{
-		
-	}
 }
